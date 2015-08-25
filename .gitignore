@@ -1,0 +1,9 @@
+.metadata
+.classpath
+.project
+build/
+WebContent/WEB-INF/lib
+.settings/
+WebContent/www/touch/
+WebContent/www/build/archive/
+WebContent/www/build/temp/
