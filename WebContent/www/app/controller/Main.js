@@ -3,12 +3,24 @@ Ext.define('TrackCar.controller.Main', {
 	
 	config: {
 		refs: {
+			carNoField: 'textfield[name=slotInfo.carlicense]'
 		},
 		control : {
 			'button[ui=confirm]' : {
 				tap: 'searchCar'
 			}
 		}
+	},
+	launch : function(){
+		var cookie = document.cookie;
+		var tmp;
+		var carNoField = this.getCarNoField();
+		Ext.each(cookie.split(';'), function(v){
+			tmp = v.split('=');
+			if (tmp[0] == 'user_car_license'){
+				carNoField.setValue(tmp[1]);
+			}
+		});
 	},
 	searchCar : function (btn){
 		var form = btn.up('formpanel');
@@ -40,6 +52,8 @@ Ext.define('TrackCar.controller.Main', {
 		    	var imgs = tab.getActiveItem().query('img');
 		    	imgs[0].setSrc(ret.slotInfoMap.CarPicPath);
 				imgs[1].setSrc(ret.slotInfoMap.RoadPicPath);
+				
+				document.cookie = 'user_car_license=' + carNo;
 		    },
 
 		    failure: function(response) {
