@@ -38,7 +38,6 @@ Ext.define('TrackCar.view.Main', {
 				flex: 1
 			},{
 				xtype: 'img',
-				src : 'img1.jpg',
 				flex : 5
 			},{
 				xtype: 'label',
@@ -46,7 +45,6 @@ Ext.define('TrackCar.view.Main', {
 				flex: 1
 			},{
 				xtype: 'img',
-				src : 'img2.jpg',
 				flex : 5
 			},]
 		} ]

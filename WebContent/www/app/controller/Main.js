@@ -1,5 +1,8 @@
 Ext.define('TrackCar.controller.Main', {
 	extend : 'Ext.app.Controller',
+	requires:['TrackCar.Util'],
+	
+	userCarLicenseKey: 'user_car_license',
 	
 	config: {
 		refs: {
@@ -12,15 +15,7 @@ Ext.define('TrackCar.controller.Main', {
 		}
 	},
 	launch : function(){
-		var cookie = document.cookie;
-		var tmp;
-		var carNoField = this.getCarNoField();
-		Ext.each(cookie.split(';'), function(v){
-			tmp = v.split('=');
-			if (tmp[0] == 'user_car_license'){
-				carNoField.setValue(tmp[1]);
-			}
-		});
+		this.getCarNoField().setValue(TrackCar.Util.getCookie(this.userCarLicenseKey));
 	},
 	searchCar : function (btn){
 		var form = btn.up('formpanel');
@@ -35,6 +30,7 @@ Ext.define('TrackCar.controller.Main', {
 			return;
 		}
 		var tab = form.up('tabpanel');
+		var me = this;
 		Ext.Ajax.request({
 		    url: 'obtainSlotInfo.cmd',
 		    method: 'POST',
@@ -53,7 +49,7 @@ Ext.define('TrackCar.controller.Main', {
 		    	imgs[0].setSrc(ret.slotInfoMap.CarPicPath);
 				imgs[1].setSrc(ret.slotInfoMap.RoadPicPath);
 				
-				document.cookie = 'user_car_license=' + carNo;
+				TrackCar.Util.saveCookie(me.userCarLicenseKey,carNo);
 		    },
 
 		    failure: function(response) {

@@ -639,6 +639,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.viewport.WindowsPhone": [
     "Ext.viewport.WP"
   ],
+  "TrackCar.Util": [],
   "TrackCar.controller.Main": [],
   "TrackCar.view.Main": []
 });
@@ -1360,6 +1361,7 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.viewport.Ios": [],
   "Ext.viewport.Viewport": [],
   "Ext.viewport.WindowsPhone": [],
+  "TrackCar.Util": [],
   "TrackCar.controller.Main": [],
   "TrackCar.view.Main": [
     "widget.main"
