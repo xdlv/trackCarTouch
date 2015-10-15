@@ -22,6 +22,8 @@ public abstract class BaseAction extends ActionSupport {
 	protected int page = 0;
 	protected long _dc;
 	
+	protected String filter;
+	
 	protected boolean success = true;
 
 	public int getStart() {
@@ -71,5 +73,23 @@ public abstract class BaseAction extends ActionSupport {
 			ret[i] = Integer.parseInt(status[i]);
 		}
 		return ret;
+	}
+	
+	public void setFilter(String filter) {
+		this.filter = filter;
+	}
+	
+	protected int getIntFilterValue(){
+		//parse [{"property":"userId","value":1,"exactMatch":true}]
+		int start = filter.indexOf("\"value\":") + 8;
+		return Integer.parseInt(filter.substring(
+				start , filter.indexOf(",", start)));
+	}
+	
+	public static void main(String[] args) {
+		String filter = "[{\"property\":\"userId\",\"value\":1,\"";
+		int start = filter.indexOf("\"value\":") + 8;
+		System.out.println(filter.substring(
+				start , filter.indexOf(",", start)));
 	}
 }

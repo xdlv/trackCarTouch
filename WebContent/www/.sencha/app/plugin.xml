@@ -1,6 +1,6 @@
 <project basedir=".">
     <!--
-    This file can be freely edited, so long as the <import file="plugin-impl.xml"/>
+    This file can be freely edited, so long as the <import file="${sencha.workspace.config.dir}/plugin.xml"/>
     statement is not removed.
 
     One of the purposes of this file is to hook various Sencha Command operations and do

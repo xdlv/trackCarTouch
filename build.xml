@@ -9,8 +9,6 @@
 		<mkdir dir="${dest}"/>
 	</target>
 	
-	<target name="">
-	</target>
 
 	<target name="sencha" depends="">
 	

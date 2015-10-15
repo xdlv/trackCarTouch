@@ -13,9 +13,3 @@ create table MapPositionAndQueryPic(
     QueryPlace int not null,
     RoadPicPath VARCHAR(150)
 );
-
-drop table IF EXISTS t_primary_key;
-create table t_primary_key(
-    table_name varchar(32) not null primary key,
-    current_id int not null
-);

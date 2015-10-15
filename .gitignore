@@ -4,6 +4,7 @@
 build/
 WebContent/WEB-INF/lib
 .settings/
-WebContent/www/touch/
-WebContent/www/build/archive/
-WebContent/www/build/temp/
+WebContent/www/build
+WebContent/www/ext
+WebContent/www/bootstrap.*
+WebContent/www/resources/sass/.sass-cache

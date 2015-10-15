@@ -64,4 +64,9 @@
 		autowire="byType" />
 	<bean name="ParkStationAction" class="com.fyc.park.action.ParkStationAction"
 		scope="prototype" autowire="byType" />
+	
+	<bean class="com.fyc.park.service.impl.UserServiceImpl"
+		autowire="byType" />
+	<bean name="UserAction" class="com.fyc.park.action.UserAction"
+		scope="prototype" autowire="byType" />
 </beans>

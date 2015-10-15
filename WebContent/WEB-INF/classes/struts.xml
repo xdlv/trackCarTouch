@@ -4,7 +4,7 @@
 <struts>
 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
 	<constant name="struts.devMode" value="true" />
-	<constant name="struts.action.extension" value="cmd"/> 
+	<constant name="struts.action.extension" value="cmd" />
 
 	<package name="default" namespace="/www" extends="json-default">
 		<global-results>
@@ -18,12 +18,14 @@
 			<result name="login">index.html</result>
 		</global-results>
 		<global-exception-mappings>
-			<exception-mapping exception="java.lang.Exception" result="error"/>
+			<exception-mapping exception="java.lang.Exception"
+				result="error" />
 		</global-exception-mappings>
-        
-        <!-- User -->
-        
-        <!-- ParkStation -->
-		<action name="obtainSlotInfo" class="ParkStationAction" method="obtainSlotInfo"/>		
+
+		<!-- User -->
+		<action name="userLogin" class="UserAction" method="userLogin" />
+		<action name="obtainMod" class="UserAction" method="obtainMod" />
+		<!-- ParkStation -->
+		<action name="obtainSlotInfo" class="ParkStationAction" method="obtainSlotInfo" />
 	</package>
 </struts>
