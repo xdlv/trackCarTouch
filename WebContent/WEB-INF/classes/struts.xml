@@ -25,7 +25,7 @@
 		<!-- User -->
 		<action name="userLogin" class="UserAction" method="userLogin" />
 		<action name="obtainMod" class="UserAction" method="obtainMod" />
-		<!-- ParkStation -->
-		<action name="obtainSlotInfo" class="ParkStationAction" method="obtainSlotInfo" />
+		<action name="obtainUsers" class="UserAction" method="obtainUsers" />
+		<action name="saveUser" class="UserAction" method="saveUser" />
 	</package>
 </struts>

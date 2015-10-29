@@ -50,7 +50,8 @@ Ext.define('TrackCar.view.main.Head', {
         },
         {
             xtype: 'tbtext',
-            text: 'Goff Smith',
+            bind: {text: '{currentUser.name}'},
+            
             cls: 'top-user-name'
         },
         {

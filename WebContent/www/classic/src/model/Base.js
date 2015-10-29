@@ -6,13 +6,6 @@ Ext.define('TrackCar.model.Base', {
 		type : 'int'
 	} ],
 	schema: {
-        namespace: 'TrackCar.model',
-        proxy: {
-            url: 'obtain{entityName}.cmd',
-            reader: {
-            	type: 'json',
-            	rootProperty : '{entityName:uncapitalize}s'
-            }
-        }
+        namespace: 'TrackCar.model'
     }
 });

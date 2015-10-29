@@ -65,4 +65,15 @@
     where name = #{name,jdbcType=VARCHAR} and pwd = #{pwd,jdbcType=VARCHAR}
   </select>
   
+  <select id="selectUsers" parameterType="java.lang.Integer" resultMap="UserResultMap">
+    select 
+    <include refid="UserColumn" />
+    from t_user limit #{start,jdbcType=INTEGER} , #{end,jdbcType=INTEGER}
+  </select>
+  
+  <select id="selectUserCount" resultType="java.lang.Integer">
+    select  count(*) from t_user
+  </select>
+  
+  
 </mapper>

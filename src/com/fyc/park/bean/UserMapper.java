@@ -1,5 +1,7 @@
 package com.fyc.park.bean;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
@@ -29,5 +31,9 @@ public interface UserMapper {
 	int updateByPrimaryKey(User record);
 	
 	User selecUserByNameAndPwd(@Param("name")String name, @Param("pwd")String pwd);
+
+	List<User> selectUsers(@Param("start")int start, @Param("end")int end);
+
+	int selectUserCount();
 	
 }

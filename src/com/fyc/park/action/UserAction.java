@@ -23,6 +23,17 @@ public class UserAction extends BaseAction {
 		return SUCCESS;
 	}
 	
+	public String obtainUsers(){
+		total = userService.getUsersCount();
+		users = userService.getUsers(start, start + limit);
+		return SUCCESS;
+	}
+	
+	public String saveUser(){
+		userService.saveUser(user);
+		return FINISH;
+	}
+	
 	public String obtainMod(){
 		mods = userService.getUserMods(getIntFilterValue());
 		return SUCCESS;

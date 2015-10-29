@@ -8,29 +8,23 @@ Ext.define('TrackCar.view.login.LoginController', {
 			url : 'userLogin.cmd',
 			method : 'POST',
 			params : form.getValues(),
-			scope: this,
+			scope : this,
 			success : this.loginSuccess
 		});
 	},
 	loginSuccess : function(response) {
 		var session = this.getView().getSession();
-		var users = Ext.data.schema.Schema.lookupEntity('User').getProxy(
-				).getReader().read(response,{
-					recordCreator: session.recordCreator
+		
+		var userReader = Ext.data.schema.Schema.lookupEntity('User').getProxy().getReader();
+		//userReader.setConfig('rootProperty','users');
+		var users = userReader.read(response, {
+					recordCreator : session.recordCreator
 				});
-		if (users.getRecords().length < 1){
+		if (users.getRecords().length < 1) {
 			return;
 		}
 		var user = users.getRecords()[0];
-		user.mods().load({
-			scope: this,
-			callback: function(records,operation, success){
-				if (success){
-					user.userMods = records;
-					this.fireViewEvent('login',user);
-				}
-			}
-		});
+		this.fireViewEvent('login', user);
 	}
 
 });

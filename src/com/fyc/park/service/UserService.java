@@ -10,4 +10,10 @@ public interface UserService extends BaseService {
 	User userLogin(String name, String pwd);
 	
 	List<Mod> getUserMods(int userId);
+	
+	List<User> getUsers(int start, int end);
+
+	int getUsersCount();
+
+	void saveUser(User user);
 }

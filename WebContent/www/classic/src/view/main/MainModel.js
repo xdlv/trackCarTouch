@@ -1,7 +1,9 @@
 Ext.define('TrackCar.view.main.MainModel', {
 	extend : 'Ext.app.ViewModel',
 	alias : 'viewmodel.main-main',
-	
+	data: {
+		
+	},
 	formulas: {
         selectionText: function(get) {
             var selection = get('treelist.selection'),
@@ -22,65 +24,43 @@ Ext.define('TrackCar.view.main.MainModel', {
             root: {
                 expanded: true,
                 children: [{
-                    text: 'Home',
-                    iconCls: 'x-fa fa-home',
-                    children: [{
-                        text: 'Messages',
-                        iconCls: 'x-fa fa-inbox',
-                        leaf: true
-                    },{
-                        text: 'Archive',
-                        iconCls: 'x-fa fa-database',
-                        children: [{
-                            text: 'First',
-                            iconCls: 'x-fa fa-sliders',
-                            leaf: true
-                        },{
-                            text: 'No Icon',
-                            iconCls: null,
-                            leaf: true
-                        }]
-                    },{
-                        text: 'Music',
-                        iconCls: 'x-fa fa-music',
-                        leaf: true
-                    },{
-                        text: 'Video',
-                        iconCls: 'x-fa fa-film',
-                        leaf: true
-                    }]
-                },{
-                    text: 'Users',
+                    text: '用户管理',
                     iconCls: 'x-fa fa-user',
-                    children: [{
-                        text: 'Tagged',
-                        iconCls: 'x-fa fa-tag',
-                        leaf: true
-                    },{
-                        text: 'Inactive',
-                        iconCls: 'x-fa fa-trash',
-                        leaf: true
-                    }]
+                    leaf: true,
+                    view: 'user.ModUser',
+                    routeId: 'user-ModUser'
                 },{
-                    text: 'Groups',
-                    iconCls: 'x-fa fa-group',
-                    leaf: true
-                },{
-                    text: 'Settings',
+                    text: '导入导出',
                     iconCls: 'x-fa fa-wrench',
                     children: [{
-                        text: 'Sharing',
+                        text: '手机号码导入',
                         iconCls: 'x-fa fa-share-alt',
                         leaf: true
                     },{
-                        text: 'Notifications',
+                        text: '对账文件导入',
                         iconCls: 'x-fa fa-flag',
                         leaf: true
                     },{
-                        text: 'Network',
+                        text: '对账结果导出',
                         iconCls: 'x-fa fa-signal',
                         leaf: true
                     }]
+                },{
+                    text: '对账查询',
+                    iconCls: 'x-fa fa-home',
+                    children: [{
+                        text: '对账记录查询',
+                        iconCls: 'x-fa fa-inbox',
+                        leaf: true
+                    },{
+                        text: '对账结果查询',
+                        iconCls: 'x-fa fa-database',
+                        leaf: true
+                    }]
+                },{
+                    text: '消息通知',
+                    iconCls: 'x-fa fa-music',
+                    leaf: true
                 }]
             }
         }
