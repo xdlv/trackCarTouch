@@ -3,9 +3,6 @@ Ext.define('TrackCar.Application', {
     
     name: 'TrackCar',
     
-    //controllers: ['TrackCar.controller.Root'],
-    
-    models:['User','Mod','Role'],
 
     stores: [
         // TODO: add global / shared stores here

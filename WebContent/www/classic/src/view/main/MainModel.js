@@ -1,11 +1,7 @@
 Ext.define('TrackCar.view.main.MainModel', {
 	extend : 'Ext.app.ViewModel',
+	alias : 'viewmodel.main-main',
 	
-	data: {
-		name: 'Track Car System'
-	},
-
-	alias : 'viewmodel.main',
 	formulas: {
         selectionText: function(get) {
             var selection = get('treelist.selection'),
@@ -21,7 +17,7 @@ Ext.define('TrackCar.view.main.MainModel', {
     },
 
     stores: {
-        navItems2: {
+        navItems: {
             type: 'tree',
             root: {
                 expanded: true,

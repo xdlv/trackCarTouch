@@ -9,7 +9,6 @@ Ext.application({
     extend: 'TrackCar.Application',
 
     requires: [
-        'TrackCar.view.main.Main',
         'TrackCar.view.test.TreeList'
     ],
 

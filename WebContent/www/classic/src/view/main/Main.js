@@ -5,10 +5,10 @@ Ext.define('TrackCar.view.main.Main', {
 		type: 'vbox',
 		align: 'stretch'
 	},
+	controller: 'main-main',
 	viewModel: {
-        type: 'main'
+        type: 'main-main'
     },
-	controller: 'main',
 	items: [{
 		xtype: 'head'
 	},{
@@ -19,12 +19,12 @@ Ext.define('TrackCar.view.main.Main', {
         items: [{
         	xtype : 'treelist',
     		width: 250,
-    		ui : 'nav',
+    		ui : 'navigation',
     		reference: 'navigationTreeList',
             itemId: 'navigationTreeList',
     		expanderFirst: false,
             expanderOnly: false,
-    		bind : '{navItems2}',
+    		bind : '{navItems}',
     		listeners: {
                 selectionchange: 'onNavigationTreeSelectionChange'
             }
